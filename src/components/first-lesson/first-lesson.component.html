@@ -1,0 +1,69 @@
+<article class="first-lesson-wrapper">
+    <section class="card personal-information-form">
+        
+        <article class="personal-information-form-column">
+            <div class="personal-information-form-row">
+                <span class="personal-information-form-label">{{nombreLabel}}:</span>
+                <input class="custom-input" [ngModel]="nombre" (ngModelChange)="nombre = $event" type="text">
+            </div>
+
+            <div class="personal-information-form-row">
+                <span class="personal-information-form-label">{{edadLabel}}:</span>
+                <input class="custom-input" [ngModel]="edad" (ngModelChange)="edad = $event" type="number">
+            </div>
+
+        </article>
+        <article class="personal-information-form-column">
+            <div class="personal-information-form-row">
+                <span class="personal-information-form-label">{{apellidosLabel}}:</span>
+                <input class="custom-input" [ngModel]="apellidos" (ngModelChange)="apellidos = $event" type="text">
+            </div>
+            <div class="personal-information-form-row">
+                <span class="personal-information-form-label">{{aprendiendoLabel}}:</span>
+                <input [ngModel]="aprendiendo" (ngModelChange)="aprendiendo = $event" type="checkbox">
+            </div>
+        </article>
+    </section>
+    <section class="card personal-information-show">
+        <div class="personal-information-show-content" *ngIf="nombre || apellidos || edad !== 0 || aprendiendo">
+            <span>{{nombre + ' ' + apellidos}}</span>
+            <span>{{edad !== 0 && edad || ''}}</span>
+            <span>{{aprendiendo && 'Verdadero' || 'Falso'}}</span>
+        </div>
+        <div *ngIf="!nombre && !apellidos && edad === 0 && !aprendiendo" class="no-values">
+            <span>{{noValores}}</span>
+        </div>
+    </section>
+
+    <section class="card operations">
+        <article class="operations-row">
+            <input class="operation custom-input" [ngModel]="operanteSuma1" (ngModelChange)="operanteSuma1 = $event" type="number">
+            <strong>+</strong>
+            <input class="operation custom-input" [ngModel]="operanteSuma2" (ngModelChange)="operanteSuma2 = $event" type="number">
+            <strong>=</strong>
+            <span>{{sumar()}}</span>
+        </article>
+        <article class="operations-row">
+            <input class="operation custom-input" [ngModel]="operanteResta1" (ngModelChange)="operanteResta1 = $event" type="number">
+            <strong>-</strong>
+            <input class="operation custom-input" [ngModel]="operanteResta2" (ngModelChange)="operanteResta1 = $event" type="number">
+            <strong>=</strong>
+            <span>{{restar()}}</span>
+        </article>
+        <article class="operations-row">
+            <input class="operation custom-input" [ngModel]="operanteMultiplicacion1" (ngModelChange)="operanteMultiplicacion1 = $event" type="number">
+            <strong>*</strong>
+            <input class="operation custom-input" [ngModel]="operanteMultiplicacion2" (ngModelChange)="operanteMultiplicacion2 = $event" type="number">
+            <strong>=</strong>
+            <span>{{multiplicar()}}</span>
+        </article>
+        <article class="operations-row">
+            <input class="operation custom-input" [ngModel]="operanteDivision1" (ngModelChange)="operanteDivision1 = $event" type="number">
+            <strong>/</strong>
+            <input class="operation custom-input" [ngModel]="operanteDivision2" (ngModelChange)="operanteDivision2 = $event" type="number">
+            <strong>=</strong>
+            <span>{{dividir()}}</span>
+        </article>
+
+    </section>
+</article>
