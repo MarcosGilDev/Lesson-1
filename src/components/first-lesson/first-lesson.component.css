@@ -1,0 +1,84 @@
+.first-lesson-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 16px
+}
+
+section.card {
+    background-color: white;
+    margin: 8px
+}
+
+section.personal-information-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    height: 150px;
+    width: 80%;
+}
+.personal-information-form-column{
+    width: 50%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.personal-information-form-row{
+    display: flex;
+    padding-bottom: 14px;
+}
+
+.personal-information-form-label{
+    font-weight: bold;
+    margin-right: 8px;
+}
+input.custom-input{
+    border-bottom: 1px dotted black;
+    width: 40%;
+}
+input.custom-input:focus-visible{
+    outline: none;
+}
+
+.profile-image{
+    width: 50px;
+    height: 50px;
+}
+.personal-information-show{
+    padding: 16px;
+    width: 200px;
+    border-radius: 4px 4px;
+}
+
+.personal-information-show-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.no-values{
+    text-align: center;
+}
+
+.operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
+    width: 330px;
+}
+
+.operations-row{
+    display: flex;
+    justify-content: flex-start;
+}
+input.operation.custom-input{
+    width: 50px !important;
+    margin: 0 8px;
+}
